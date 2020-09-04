@@ -1,25 +1,10 @@
 package binary_search;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class P3_4_BinSearch {
-	static int binSearch(int[] a, int n, int key) {
-		int pl = 0;
-		int pr = n-1;
-		
-		do {
-			int pc = (pl+pr)/2; //중앙 요소의 인덱스
-			if(a[pc]==key)
-				return pc;
-			else if(a[pc] < key)
-				pl = pc + 1;
-			else
-				pr = pc - 1;
-		}while(pl <= pr);
-		
-		return -1;		//검색 실패
-	}
-	
+public class P3_5_BinarySearchTester {
+
 	public static void main(String[] args) {
 		Scanner stdIn = new Scanner(System.in);
 		
@@ -42,11 +27,13 @@ public class P3_4_BinSearch {
 		System.out.print("검색할 값:");
 		int ky = stdIn.nextInt();
 		
-		int idx = binSearch(x, num, ky);
+		int idx = Arrays.binarySearch(x, ky);
 		
-		if(idx==-1)
+		if(idx < 0)
 			System.out.println("그 값의 요소가 없습니다.");
 		else
 			System.out.println(ky+"은(는) x["+idx+"]에 있습니다.");
+
 	}
+
 }
