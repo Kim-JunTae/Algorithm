@@ -1,4 +1,4 @@
-package stack;
+package stack_queue;
 
 public class IntStack {
 	private int max; //스택용량
